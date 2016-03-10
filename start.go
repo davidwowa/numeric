@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-	"../NumericAlgorithms/input"
+	"../numeric/input"
 )
 
 func main() {

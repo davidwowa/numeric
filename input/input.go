@@ -8,7 +8,7 @@ import (
 	"regexp"
 //	"math"
 	"math/big"
-	"../../NumericAlgorithms/mashine"
+	"../../numeric/mashine"
 )
 
 func NewMashine() mashine.Mashine {
