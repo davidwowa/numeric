@@ -10,6 +10,12 @@ import (
 )
 
 func main() {
+	a := big.NewInt(2)
+	b := a.Sub(big.NewInt(4), big.NewInt(4))
+	fmt.Println(b)
+}
+
+func parallel(){
 	runtime.GOMAXPROCS(2)
 
 	var wg sync.WaitGroup

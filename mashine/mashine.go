@@ -27,7 +27,9 @@ func (m Mashine) GetUnderflow() *big.Int {
 }
 
 func (m Mashine) GetPrecisionChopped() *big.Int {
-	return new(big.Int).Exp(&m.Base, &m.Precision, nil)
+  one := big.NewInt(1)
+  ret := one.Sub(one, &m.Precision)
+  return new(big.Int).Exp(&m.Base, ret, nil)
 }
 
 func (m Mashine) GetPrecisionRoundedToNearest() *big.Int {
