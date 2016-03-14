@@ -4,44 +4,39 @@ import (
 	"bufio"
   "fmt"
   "os"
-//	"strconv"
 	"regexp"
-//	"math"
 	"math/big"
-	"../../numeric/mashine"
+	"../../numeric/machine"
 )
 
-func NewMashine() mashine.Mashine {
+func NewMachine() mashine.Machine {
 
-	currentMashine := mashine.Mashine{}
+	currentMachine := machine.Machine{}
 
 	reader := bufio.NewReader(os.Stdin)
-  fmt.Print("Create you own Numbersystem\nEnter the Base:\n")
-  baseString, _ := reader.ReadString('\n')
+  fmt.Print("Create machine\nx=±m*b^(±e)\nm=mantise\nb=basis\n±e=max and min exponent\n")
 
-	currentMashine.Base = *strToInt(baseString)
+	fmt.Print("Enter the precision of mantise:\n")
+	precisionMantiseString, _ := reader.ReadString('\n')
 
-	fmt.Print("Enter the Precision:\n")
-	precisionString, _ := reader.ReadString('\n')
+	currentMachine.PrecisionMantisse = *strToInt(precisionMantiseString)
 
-	currentMashine.Precision = *strToInt(precisionString)
+	fmt.Print("Enter the precision of exponent:\n")
+	precisionExponentString, _ := reader.ReadString('\n')
 
-	fmt.Print("Enter the Exponent:\n")
-	exponentString, _ := reader.ReadString('\n')
-
-	currentMashine.Exponent = *strToInt(exponentString)
+	currentMachine.PrecisionMantisseExponent = *strToInt(precisionExponentString)
 
 	fmt.Print("Enter the MaxExponent:\n")
 	maxExponentString, _ := reader.ReadString('\n')
 
-	currentMashine.MaxExponent = *strToInt(maxExponentString)
+	currentMachine.MaxExponent = *strToInt(maxExponentString)
 
 	fmt.Print("Enter the MinExponent:\n")
 	minExponentString, _ := reader.ReadString('\n')
 
-	currentMashine.MinExponent= *strToInt(minExponentString)
+	currentMachine.MinExponent= *strToInt(minExponentString)
 
-	return currentMashine
+	return currentMachine
 }
 
 func strToInt(str string) *big.Int {

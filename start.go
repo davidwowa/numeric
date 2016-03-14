@@ -2,12 +2,17 @@ package main
 
 import (
     "fmt"
+    "math"
 	"../numeric/input"
 )
 
 func main() {
-  currentMashine := input.NewMashine()
-	fmt.Println("Mashine", currentMashine)
-	currentMashine.ShowCommonInformations()
-	currentMashine.ShowCommonHWInformations()
+  currentMachine := input.NewMachine()
+	fmt.Println("Machine", currentMashine)
+	currentMachine.ShowCommonInformations()
+	showCommonHWInformations()
+}
+
+func showCommonHWInformations(){
+	fmt.Println("Overflow this hardware: ", math.MaxInt64)
 }
