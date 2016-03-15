@@ -15,16 +15,14 @@ type Machine struct {
 // biggest number to show
 // x_max = (1-b^(-r))*(b*^(b^s -1))
 func (m Machine) GetBiggestNumber() *big.Int {
-  one := big.Int(1)
-  minusr := one.Mult(&m.PrecisionMantisse, big.Int(-1))
-  br := new(big.Int).Exp(&m.Base, &m.PrecisionMantisse)
-  fmt.Println("br ->‚", br)
+  one := new(big.Int).SetInt64(1)
+  minusOne := new(big.Int).SetInt64(-1)
+  minusr := one.Mul(&m.PrecisionMantisse, minusOne)
+  br := new(big.Int).Exp(&m.PrecisionMantisse, minusr, new(big.Int).SetInt64(0))
+  fmt.Println("br ->", br)
   return minusr
 }
-
-
-
-
+// TODO WDZ
 func (m Machine) GetNumberOfNormNumbers () *big.Int {
   return big.NewInt(0)
 }

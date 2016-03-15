@@ -9,7 +9,7 @@ import (
 	"../../numeric/machine"
 )
 
-func NewMachine() mashine.Machine {
+func NewMachine() machine.Machine {
 
 	currentMachine := machine.Machine{}
 
