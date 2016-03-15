@@ -24,7 +24,7 @@ func NewMachine() machine.Machine {
 	fmt.Print("Enter the precision of exponent:\n")
 	precisionExponentString, _ := reader.ReadString('\n')
 
-	currentMachine.PrecisionMantisseExponent = *strToInt(precisionExponentString)
+	currentMachine.PrecisionExponent = *strToInt(precisionExponentString)
 
 	fmt.Print("Enter the MaxExponent:\n")
 	maxExponentString, _ := reader.ReadString('\n')

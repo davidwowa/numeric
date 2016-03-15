@@ -1,4 +1,4 @@
-package mashine
+package machine
 
 import (
   "fmt"
@@ -18,6 +18,7 @@ func (m Machine) GetBiggestNumber() *big.Int {
   one := new(big.Int).SetInt64(1)
   minusOne := new(big.Int).SetInt64(-1)
   minusr := one.Mul(&m.PrecisionMantisse, minusOne)
+  // TODO ERROR use Rat Numbers
   br := new(big.Int).Exp(&m.PrecisionMantisse, minusr, new(big.Int).SetInt64(0))
   fmt.Println("br ->", br)
   return minusr

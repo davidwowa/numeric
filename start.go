@@ -9,6 +9,7 @@ import (
 func main() {
   currentMachine := input.NewMachine()
 	fmt.Println("Machine", currentMachine)
+  currentMachine.GetBiggestNumber()
 	currentMachine.ShowCommonInformations()
 	showCommonHWInformations()
 }
