@@ -10,6 +10,8 @@ func main() {
   currentMachine := input.NewMachine()
 	fmt.Println("Machine", currentMachine)
   currentMachine.GetBiggestNumber()
+  currentMachine.GetSmallestNumber()
+  currentMachine.GetMachineEpsilon()
 	currentMachine.ShowCommonInformations()
 	showCommonHWInformations()
 }

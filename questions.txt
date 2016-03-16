@@ -1,1 +1,1 @@
-- machine parameters < 0 ???
+- machine parameters < 1 ???
